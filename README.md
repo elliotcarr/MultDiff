@@ -36,9 +36,11 @@ set(gca,'Xtick',[l0,l,lm],'Xgrid','on','FontSize',14)
 set([gca,h1,h2],'FontSize',fs);
 ```
 
-![Example A](https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleA.png)
+![Case A](https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleA.png)
 
 ##### Case B: 20 Layers
+
+![Case B](https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleB.png)
 
 ##### Case C: Imperfect contact at the interfaces
 
