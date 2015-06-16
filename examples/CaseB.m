@@ -1,6 +1,6 @@
-clc
-commandwindow
-close all
+close all, clear all, clc
+
+addpath('..')
 
 % Parameters
 m     = 20;                            % Number of layers
