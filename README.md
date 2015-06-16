@@ -28,11 +28,15 @@ bconds.Rtype = 'Dirichlet'; bconds.aR = 1.0; bconds.bR = 0.0; bconds.cR = 0.5;
 [u,x] = multilayer_diffusion(m, kappa, l0, lm, l, bconds, u0, tvec);
 
 % Plot
+for i = 1:m-1, 
+    plot([l(i),l(i)],[-0.1,1.1],'Color',[0.9,0.9,0.9])
+    hold on
+end
 plot(x,u,'b','LineWidth',2.0)
+axis([0,1,-0.1,1.1])
 xlabel('$x$','Interpreter','LaTeX','FontSize',20)
 ylabel('$u(x,t)$','Interpreter','LaTeX','FontSize',20)
-set(gca,'Xtick',[l0,l,lm],'Xgrid','on','FontSize',14)
-set([gca,h1,h2],'FontSize',fs);
+set(gca,'FontSize',14,'Layer','top')
 ```
 
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleA.png"></figure>
