@@ -78,7 +78,15 @@ ylabel('$u(x,t)$','Interpreter','LaTeX','FontSize',20)
 set(gca,'FontSize',14,'Layer','top')
 ```
 
+The solution is given by:
+
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleB.png"></figure>
+
+The wall time:
+
+```
+2.09 seconds
+```
 
 ##### Case C
 
