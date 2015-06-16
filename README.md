@@ -1,12 +1,12 @@
-## MultDiff: A Matlab code for solving the one-dimensional multilayer diffusion problem
+# MultDiff: A Matlab code for solving the one-dimensional multilayer diffusion problem
 
 ``MultDiff`` solves the transient diffusion equation in a one-dimensional composite slab of finite length consisting of three or more layers. The solution approach is based on a semi-analytic method involving the Laplace transform and an orthogonal eigenfunction expansion. The standard diffusion equation applies in each layer with an individual diffusivity that may or may not be different from adjacent layers. Either perfect or imperfect contact may be applied at the interfaces between adjacent layers. External boundary conditions at either ends of the slab can be of 'Dirichlet', 'Neumann' or 'Robin' type.
 
-## Examples
+# Examples
 
 ``MultDiff`` is best demonstrated with some examples.
 
-##### Case A
+## Case A
 
 ```
 % Parameters
@@ -44,7 +44,7 @@ set(gca,'FontSize',14,'Layer','top')
 
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseA.png"></figure>
 
-##### Case B
+## Case B
 
 ```
 % Parameters
@@ -66,14 +66,12 @@ bcs.Rtype = 'Dirichlet'; bcs.aR = 1.0; bcs.bR = 0.0; bcs.cR = 0.1;
 [u,x] = multilayer_diffusion(m, kappa, l0, lm, l, u0, bcs, tvec);
 ```
 
-Again, we can plot the solution to the above problem:
-
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseB.png"></figure>
 
 
-##### Case C
+## Case C
 
-We can also consider imperfect contact at the interfaces between adjacent layers.
+`MultDiff` also allows for imperfect contact at the interfaces between adjacent layers.
 
 ```
 % Parameters
@@ -100,9 +98,9 @@ options.H = 30*ones(m-1,1);
 
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseC.png"></figure>
 
-##### Case D
+## Case D
 
-We can also solve the single layer problem:
+`MultDiff` can can also be used to solve the single layer problem:
 
 ```
 % Parameters
@@ -126,7 +124,7 @@ bcs.Rtype = 'Dirichlet'; bcs.aR = 1.0; bcs.bR = 0.0; bcs.cR = 0.5;
 
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseD.png"></figure>
 
-## Installation
+# Installation
 
 ``MultDiff`` can be downloaded from
 
@@ -139,6 +137,6 @@ addpath(multdiffroot)
 ```
 where `multdiffroot` is the path to the unzipped directory.
 
-## License
+# License
 
 See `LICENSE.txt` for licensing information.
