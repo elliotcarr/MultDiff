@@ -1,8 +1,8 @@
 MultDiff is a Matlab code for solving the one-dimensional multilayer diffusion problem.
 
-# Examples
+#### Examples
 
-## Case A: 3 Layers
+Case A: 3 Layers
 
 ```
 m     = 3;                       % Number of layers
@@ -34,10 +34,9 @@ set(gca,'Xtick',[l0,l,lm],'Xgrid','on','FontSize',14)
 set([gca,h1,h2],'FontSize',fs);
 ```
 
-![Case A](https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleA.png)
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleA.png"></figure>
 
-## Case B: 20 Layers
+Case B: 20 Layers
 
 ```
 m     = 20;                            % Number of layers
@@ -74,13 +73,13 @@ ylabel('$u(x,t)$','Interpreter','LaTeX','FontSize',20)
 set(gca,'FontSize',14,'Layer','top')
 ```
 
-![Case B](https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleB.png)
+<figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleB.png"></figure>
 
-## Case C: Imperfect contact at the interfaces
+Case C: Imperfect contact at the interfaces
 
-## Case D: 1000 Layers
+Case D: 1000 Layers
 
-# Installation
+##### Installation
 
 MultDiff can be downloaded from
 
@@ -93,6 +92,6 @@ addpath(multdiffroot)
 ```
 where `multdiffroot` is the path to the unzipped directory.
 
-# License
+##### License
 
 See `LICENSE.txt` for MultDiff's licensing information.
