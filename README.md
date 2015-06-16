@@ -42,7 +42,7 @@ ylabel('$u(x,t)$','Interpreter','LaTeX','FontSize',20)
 set(gca,'FontSize',14,'Layer','top')
 ```
 
-<figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleA.png"></figure>
+<figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseA.png"></figure>
 
 ##### Case B
 
@@ -83,17 +83,16 @@ set(gca,'FontSize',14,'Layer','top')
 
 The solution is given by:
 
-<figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleB.png"></figure>
+<figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseB.png"></figure>
 
-The wall time:
-
-```
-2.09 seconds
-```
 
 ##### Case C
 
+<figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseC.png"></figure>
+
 ##### Case D
+
+<figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseD.png"></figure>
 
 ## Installation
 
