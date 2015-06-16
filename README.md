@@ -4,6 +4,8 @@ MultDiff
 MultDiff is a Matlab code for solving the diffusion equation in a one-dimensional 
 composite slab of finite length consisting of an arbitrary number of layers.
 
+
+
 Examples
 ========
 
@@ -30,6 +32,17 @@ multilayer_diffusion(m, kappa, l0, lm, l, bconds, H, tvec, phi0, options)
 
 Installation
 ============
+
+MulDiff can be downloaded from
+
+https://github.com/MultDiff/archive/master.zip
+
+After unzipping, you will need to add MultDiff to the MATLAB path. You can do
+this by adding the commands:
+```
+addpath(multdiffroot)
+```
+where `multdiffroot` is the path to the unzipped directory.
 
 License
 =======
