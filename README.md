@@ -7,12 +7,12 @@ MultDiff is a Matlab code for solving the one-dimensional multilayer diffusion p
 ##### Example A: 3 layers
 
 ```
-m     = 4;                   % Number of layers
+m     = 3;                   % Number of layers
 l0    = 0.0;                 % Left end of slab
 lm    = 1.0;                 % Right end of slab
-l     = [1/4,1/2,3/4];       % Location of interfaces
-kappa = [1,0.1,0.5,1];       % Diffusivities 
-tvec  = [0.1,0.5,1.0];       % Compute solution at these values of t
+l     = [0.3,0.7];           % Location of interfaces
+kappa = [1,0.1,1];           % Diffusivities 
+tvec  = [0.05,0.1,0.2,0.5,1.0];   % Compute solution at these values of t
 u0    = @(x) zeros(size(x)); % Initial condition
 
 % Boundary condition at x = l0
@@ -25,12 +25,15 @@ bconds.cL    = 1.0;
 bconds.Rtype = 'Dirichlet'; 
 bconds.aR    = 1.0; 
 bconds.bR    = 0.0; 
-bconds.cR    = 1.0;
+bconds.cR    = 0.5;
 
 [u,x] = multilayer_diffusion(m, kappa, l0, lm, l, bconds, u0, tvec);
 
-plot(x,u)
-set(gca,'XTick',[l0,l,lm],'Xgrid','on','FontSize',12)
+plot(x,u,'b','LineWidth',2.0)
+fs = 14;
+xlabel('$x$','Interpreter','LaTeX','FontSize',fs)
+ylabel('$u(x,t)$','Interpreter','LaTeX','FontSize',fs)
+set(gca,'FontSize',fs,'Xtick',[l0,l,lm],'Xgrid','on')
 ```
 
 ![Example A](https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleA.png)
