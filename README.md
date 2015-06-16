@@ -1,6 +1,6 @@
 ## MultDiff: A Matlab code for solving the one-dimensional multilayer diffusion problem
 
-``MultDiff`` solves the transient diffusion equation in a one-dimensional composite slab of finite length consisting of three or more layers. Each layer is homogeneous, isotropic and has an individual diffusivity that may or may not be different from adjacent layers. Perfect or imperfect contact may be applied at the interfaces between adjacents layers. External boundary conditions at the ends of the slab may be of 'Dirichlet', 'Neumann' or 'Robin' type.
+``MultDiff`` solves the transient diffusion equation in a one-dimensional composite slab of finite length consisting of three or more layers. The standard diffusion equation is solved in each layer with an individual diffusivity that may or may not be different from adjacent layers. The solution approach is based on a semi-analytic method involving the Laplace transform and an orthogonal eigenfunction expansion. Either perfect or imperfect contact may be applied at the interfaces between adjacents layers. External boundary conditions at the ends of the slab may be of 'Dirichlet', 'Neumann' or 'Robin' type.
 
 ## Examples
 
