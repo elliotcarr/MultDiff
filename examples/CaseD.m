@@ -3,12 +3,12 @@ close all, clear all, clc
 addpath('..')
 
 % Parameters
-m     = 3;                       % Number of layers
-l0    = 0.0;                     % Left end of slab
-lm    = 1.0;                     % Right end of slab
-l     = [0.3,0.7];               % Location of interfaces
-kappa = [1,0.1,1];               % Diffusivities 
-tvec  = [0.05,0.1,0.2,0.5,1.0];  % Compute solution at these values of t
+m     = 3;                   % Number of layers
+l0    = 0.0;                 % Left end of slab
+lm    = 1.0;                 % Right end of slab
+l     = [0.3,0.7];           % Location of interfaces
+kappa = [1,1,1];             % Diffusivities 
+tvec  = [0.05,0.1,0.2,1.0];  % Compute solution at these values of t
 
 % Initial condition
 u0 = @(x) zeros(size(x));     
