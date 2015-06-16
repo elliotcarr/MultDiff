@@ -6,7 +6,7 @@
 
 ``MultDiff`` is best demonstrated via examples.
 
-##### Case A: 3 Layers
+##### Case A
 
 ```
 m     = 3;                       % Number of layers
@@ -40,7 +40,7 @@ set([gca,h1,h2],'FontSize',fs);
 
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleA.png"></figure>
 
-Case B: 20 Layers
+##### Case B
 
 ```
 m     = 20;                            % Number of layers
@@ -79,9 +79,9 @@ set(gca,'FontSize',14,'Layer','top')
 
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleB.png"></figure>
 
-##### Case C: Imperfect contact at the interfaces
+##### Case C
 
-##### Case D: 1000 Layers
+##### Case D
 
 ## Installation
 
