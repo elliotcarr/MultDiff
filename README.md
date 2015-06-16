@@ -2,15 +2,6 @@
 
 MultDiff is a Matlab code for solving the one-dimensional multilayer diffusion problem.
 
-## Contents
-- About
-- Examples
-- Installation
-- License
-
-## About
-
-
 ## Examples
 
 ##### Example A: Three layer slab (exampleA.m)
@@ -31,7 +22,9 @@ bconds.Ltype = 'Dirichlet'; bconds.aL = 1.0; bconds.bL = 0.0; bconds.cL = 1.0;
 % Boundary condition at x = lm
 bconds.Rtype = 'Dirichlet'; bconds.aR = 1.0; bconds.bR = 0.0; bconds.cR = 0.0;
 
-multilayer_diffusion(m, kappa, l0, lm, l, bconds, H, tvec, phi0, options)
+u = multilayer_diffusion(m, kappa, l0, lm, l, bconds, H, tvec, phi0, options)
+
+plot(x,u)
 ```
 
 ## Installation
