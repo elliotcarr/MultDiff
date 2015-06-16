@@ -1,5 +1,3 @@
-# MultDiff
-
 MultDiff is a Matlab code for solving the one-dimensional multilayer diffusion problem.
 
 # Examples
