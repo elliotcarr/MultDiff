@@ -8,7 +8,7 @@
 
 ##### Case A
 
-```matlab
+```
 % Parameters
 m     = 3;                       % Number of layers
 l0    = 0.0;                     % Left end of slab
