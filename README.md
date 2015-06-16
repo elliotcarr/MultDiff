@@ -1,8 +1,12 @@
-# MultDiff: A Matlab code for solving the one-dimensional multilayer diffusion problem.
+## MultDiff: A Matlab code for solving the one-dimensional multilayer diffusion problem
+
+MultDiff solves the diffusion equation in a one-dimensional composite slab of finite length consisting of three or more layers. Each layer is homogeneous, isotropic and has an individual diffusivity that may or may not be different from adjacent layers. Perfect or imperfect contact may be applied at the interfaces between adjacents layers. External boundary conditions at the ends of the slab may be of 'Dirichlet', 'Neumann' or 'Robin' type.
 
 ## Examples
 
-Case A: 3 Layers
+MultDiff is best demonstrated by example.
+
+##### Case A: 3 Layers
 
 ```
 m     = 3;                       % Number of layers
