@@ -33,7 +33,7 @@ plot(x,u)
 set(gca,'XTick',[l0,l,lm],'Xgrid','on','FontSize',12)
 ```
 
-![Example A](https://github.com/elliotcarr/MultDiff/master/figures/exampleA.png)
+![Example A](https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleA.png)
 
 ## Installation
 
