@@ -18,7 +18,7 @@ kappa = [1,0.1,1];               % Diffusivities
 tvec  = [0.05,0.1,0.2,0.5,1.0];  % Compute solution at these values of t
 
 % Initial condition
-u0    = @(x) zeros(size(x));     
+u0 = @(x) zeros(size(x));     
 
 % Boundary conditions
 bconds.Ltype = 'Dirichlet'; bconds.aL = 1.0; bconds.bL = 0.0; bconds.cL = 1.0;
@@ -26,8 +26,11 @@ bconds.Rtype = 'Dirichlet'; bconds.aR = 1.0; bconds.bR = 0.0; bconds.cR = 0.5;
 
 % Solve
 [u,x] = multilayer_diffusion(m, kappa, l0, lm, l, bconds, u0, tvec);
+```
 
-% Plot
+We can then plot the solution to the above problem using the following code:
+
+```
 for i = 1:m-1, 
     plot([l(i),l(i)],[-0.1,1.1],'Color',[0.9,0.9,0.9])
     hold on
