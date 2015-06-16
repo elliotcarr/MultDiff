@@ -1,10 +1,10 @@
-## MultDiff
+### MultDiff
 
 MultDiff is a Matlab code for solving the one-dimensional multilayer diffusion problem.
 
-## Examples
+### Examples
 
-##### Example A: Three layer slab (exampleA.m)
+##### Example A: 3 layers
 
 ```
 m     = 4;                   % Number of layers
@@ -35,7 +35,13 @@ set(gca,'XTick',[l0,l,lm],'Xgrid','on','FontSize',12)
 
 ![Example A](https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleA.png)
 
-## Installation
+##### Example B: 10 layers
+
+##### Example C: Imperfect contact
+
+##### Example D: Large number of layers
+
+### Installation
 
 MultDiff can be downloaded from
 
@@ -48,6 +54,6 @@ addpath(multdiffroot)
 ```
 where `multdiffroot` is the path to the unzipped directory.
 
-## License
+### License
 
 See `LICENSE.txt` for MultDiff's licensing information.
