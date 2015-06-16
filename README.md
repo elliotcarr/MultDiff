@@ -1,4 +1,4 @@
-MultDiff is a Matlab code for solving the one-dimensional multilayer diffusion problem.
+# MultDiff: A Matlab code for solving the one-dimensional multilayer diffusion problem.
 
 ## Examples
 
