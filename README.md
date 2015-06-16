@@ -4,7 +4,7 @@ MultDiff is a Matlab code for solving the one-dimensional multilayer diffusion p
 
 ### Examples
 
-##### Example A: 3 layers
+##### Case A: 3 Layers
 
 ```
 m     = 3;                       % Number of layers
@@ -38,11 +38,11 @@ set([gca,h1,h2],'FontSize',fs);
 
 ![Example A](https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleA.png)
 
-##### Example B: 10 layers
+##### Case B: 20 Layers
 
-##### Example C: Imperfect contact
+##### Case C: Imperfect contact at the interfaces
 
-##### Example D: Large number of layers
+##### Case D: 1000 Layers
 
 ### Installation
 
