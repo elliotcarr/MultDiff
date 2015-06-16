@@ -1,10 +1,10 @@
 ## MultDiff: A Matlab code for solving the one-dimensional multilayer diffusion problem
 
-MultDiff solves the diffusion equation in a one-dimensional composite slab of finite length consisting of three or more layers. Each layer is homogeneous, isotropic and has an individual diffusivity that may or may not be different from adjacent layers. Perfect or imperfect contact may be applied at the interfaces between adjacents layers. External boundary conditions at the ends of the slab may be of 'Dirichlet', 'Neumann' or 'Robin' type.
+``MultDiff`` solves the transient diffusion equation in a one-dimensional composite slab of finite length consisting of three or more layers. Each layer is homogeneous, isotropic and has an individual diffusivity that may or may not be different from adjacent layers. Perfect or imperfect contact may be applied at the interfaces between adjacents layers. External boundary conditions at the ends of the slab may be of 'Dirichlet', 'Neumann' or 'Robin' type.
 
 ## Examples
 
-MultDiff is best demonstrated by example.
+``MultDiff`` is best demonstrated via examples.
 
 ##### Case A: 3 Layers
 
@@ -79,13 +79,13 @@ set(gca,'FontSize',14,'Layer','top')
 
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/exampleB.png"></figure>
 
-Case C: Imperfect contact at the interfaces
+##### Case C: Imperfect contact at the interfaces
 
-Case D: 1000 Layers
+##### Case D: 1000 Layers
 
 ## Installation
 
-MultDiff can be downloaded from
+``MultDiff`` can be downloaded from
 
 https://github.com/elliotcarr/MultDiff/archive/master.zip
 
@@ -98,4 +98,4 @@ where `multdiffroot` is the path to the unzipped directory.
 
 ## License
 
-See `LICENSE.txt` for MultDiff's licensing information.
+See `LICENSE.txt` for licensing information.
