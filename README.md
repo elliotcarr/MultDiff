@@ -1,12 +1,12 @@
-# MultDiff: A Matlab code for solving the one-dimensional multilayer diffusion problem
+## MultDiff: A Matlab code for solving the one-dimensional multilayer diffusion problem
 
-``MultDiff`` solves the transient diffusion equation in a one-dimensional composite slab of finite length consisting of three or more layers. The solution approach is based on a semi-analytic method involving the Laplace transform and an orthogonal eigenfunction expansion. The standard diffusion equation applies in each layer with an individual diffusivity that may or may not be different from adjacent layers. Either perfect or imperfect contact may be applied at the interfaces between adjacent layers. External boundary conditions at either ends of the slab can be of 'Dirichlet', 'Neumann' or 'Robin' type.
+``MultDiff`` solves the transient diffusion equation in a one-dimensional composite slab of finite length consisting of `m` layers. The code is applicable to both perfect and imperfect contact at the interfaces between adjacent layers and either Dirichlet, Neumann or Robin boundary conditions at the ends of the slab. Most approaches for this problem require the solution of a complex transcendental equation arising from the determinant of a `2m by 2m` matrix for the eigenvalues, which is difficult to solve for large `m`. Our approach is based on a semi-analytic method based on the Laplace transform and an orthogonal eigenfunction expansion involving eigenvalues that are obtained either explicitly or by solving simple transcendental equations. The code works well for a large number of layers (large `m`).
 
-# Examples
+## Examples
 
 ``MultDiff`` is best demonstrated with some examples.
 
-## Case A
+### Case A
 
 ```
 % Parameters
@@ -44,7 +44,7 @@ set(gca,'FontSize',14,'Layer','top')
 
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseA.png"></figure>
 
-## Case B
+### Case B
 
 ```
 % Parameters
@@ -69,7 +69,7 @@ bcs.Rtype = 'Dirichlet'; bcs.aR = 1.0; bcs.bR = 0.0; bcs.cR = 0.1;
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseB.png"></figure>
 
 
-## Case C
+### Case C
 
 `MultDiff` also allows for imperfect contact at the interfaces between adjacent layers.
 
@@ -98,7 +98,7 @@ options.H = 30*ones(m-1,1);
 
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseC.png"></figure>
 
-## Case D
+### Case D
 
 `MultDiff` can can also be used to solve the single layer problem:
 
@@ -124,19 +124,19 @@ bcs.Rtype = 'Dirichlet'; bcs.aR = 1.0; bcs.bR = 0.0; bcs.cR = 0.5;
 
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseD.png"></figure>
 
-# Installation
+## Installation
 
 ``MultDiff`` can be downloaded from
 
 https://github.com/elliotcarr/MultDiff/archive/master.zip
 
-After unzipping, you will need to add MultDiff to the MATLAB path. You can do
+After unzipping, you will need to add the directory to the MATLAB path. You can do
 this via the command:
 ```
 addpath(multdiffroot)
 ```
 where `multdiffroot` is the path to the unzipped directory.
 
-# License
+## License
 
 See `LICENSE.txt` for licensing information.
