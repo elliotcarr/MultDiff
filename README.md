@@ -68,26 +68,17 @@ Rbnd  = {'Dirichlet',1.0,0.0,0.1};     % Boundary condition (x = lm)
 `MultDiff` also allows for imperfect contact at the interfaces between adjacent layers.
 
 ```
-% Parameters
 m     = 20;                          % Number of layers
 l0    = 0.0;                         % Left end of slab
 lm    = 1.0;                         % Right end of slab
 dx    = (lm-l0)/m; l = dx:dx:lm-dx;  % Location of interfaces
 kappa = ones(m,1);                   % Diffusivities 
-tvec  = [0.01,0.1,0.2,0.5,1.0];      % Compute solution at these values of t
-
-% Initial condition
-u0 = @(x) zeros(size(x));     
-
-% Boundary conditions
-bcs.Ltype = 'Dirichlet'; bcs.aL = 1.0; bcs.bL = 0.0; bcs.cL = 1.0;
-bcs.Rtype = 'Dirichlet'; bcs.aR = 1.0; bcs.bR = 0.0; bcs.cR = 1.0;
-
-% Contact transfer coefficients at interfaces
-options.H = 30*ones(m-1,1);
-
-% Solve
-[u,x] = multilayer_diffusion(m, kappa, l0, lm, l, u0, bcs, tvec, options);
+tspan = [0.01,0.1,0.2,0.5,1.0];      % Times at which to compute solution
+u0    = @(x) zeros(size(x));         % Initial condition
+Lbnd  = {'Dirichlet',1.0,0.0,1.0};   % Boundary condition (x = l0)
+Rbnd  = {'Dirichlet',1.0,0.0,1.0};   % Boundary condition (x = lm)
+H     = 30*ones(m-1,1);              % Contact transfer coefficients at interfaces
+[u,x] = multdiff(m,kappa,l0,lm,l,u0,Lbnd,Rbnd,tspan,'Imperfect',H);
 ```
 
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseC.png"></figure>
@@ -97,23 +88,16 @@ options.H = 30*ones(m-1,1);
 `MultDiff` can can also be used to solve the single layer problem:
 
 ```
-% Parameters
-m     = 3;                   % Number of layers
-l0    = 0.0;                 % Left end of slab
-lm    = 1.0;                 % Right end of slab
-l     = [0.3,0.7];           % Location of interfaces
-kappa = [1,1,1];             % Diffusivities 
-tvec  = [0.05,0.1,0.2,1.0];  % Compute solution at these values of t
-
-% Initial condition
-u0 = @(x) zeros(size(x));     
-
-% Boundary conditions
-bcs.Ltype = 'Dirichlet'; bcs.aL = 1.0; bcs.bL = 0.0; bcs.cL = 1.0;
-bcs.Rtype = 'Dirichlet'; bcs.aR = 1.0; bcs.bR = 0.0; bcs.cR = 0.5;
-
-% Solve
-[u,x] = multilayer_diffusion(m, kappa, l0, lm, l, u0, bcs, tvec);
+m     = 3;                          % Number of layers
+l0    = 0.0;                        % Left end of slab
+lm    = 1.0;                        % Right end of slab
+l     = [0.3,0.7];                  % Location of interfaces
+kappa = [1,1,1];                    % Diffusivities 
+tspan = [0.02,0.05,0.1,0.2,1.0];    % Times at which to compute solution
+u0    = @(x) zeros(size(x));        % Initial condition
+Lbnd  = {'Dirichlet',1.0,0.0,1.0};  % Boundary condition (x = l0)
+Rbnd  = {'Dirichlet',1.0,0.0,0.5};  % Boundary condition (x = lm)
+[u,x] = multdiff(m,kappa,l0,lm,l,u0,Lbnd,Rbnd,tspan,'Perfect');
 ```
 
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseD.png"></figure>
