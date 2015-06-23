@@ -1,24 +1,19 @@
 close all, clear all, clc
 
+% Add directory to current path
 addpath('..')
 
 % Parameters
 m     = 20;                            % Number of layers
+kappa = repmat([1.0,0.1],1,m/2);       % Diffusivities 
 l0    = 0.0;                           % Left end of slab
 lm    = 1.0;                           % Right end of slab
 dx    = (lm-l0)/m; l = dx:dx:lm-dx;    % Location of interfaces
-kappa = repmat([1.0,0.1],1,m/2);       % Diffusivities 
+u0    = @(x) ones(size(x));            % Initial condition
+Lbnd  = {'Neumann',0.0,1.0,0.0};       % Boundary condition (x = l0)
+Rbnd  = {'Dirichlet',1.0,0.0,0.1};     % Boundary condition (x = lm)
 tspan = [0.001,0.1,0.5,1.0,2.0,15.0];  % Times at which to compute solution
-
-% Initial condition
-u0 = @(x) ones(size(x));            
-
-% Boundary conditions
-bcs.Ltype = 'Neumann'; bcs.aL = 0.0; bcs.bL = 1.0; bcs.cL = 0.0;
-bcs.Rtype = 'Dirichlet'; bcs.aR = 1.0; bcs.bR = 0.0; bcs.cR = 0.1;
-
-% Solve
-[u,x] = multdiff(m,kappa,l0,lm,l,u0,bcs,tvec,'Perfect');
+[u,x] = multdiff(m,kappa,l0,lm,l,u0,Lbnd,Rbnd,tspan,'Perfect');
 
 % Plot
 for i = 1:m-1, 
