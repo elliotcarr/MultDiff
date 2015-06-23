@@ -52,6 +52,30 @@ set(gca,'FontSize',14,'Layer','top')
 
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/ExampleA.png"></figure>
 
+The solution can be verified against the Finite Volume solution:
+
+```
+dt = 0.001;       % Time step
+options.NX = 10;  % Number of divisions within each slab 
+[uf,xf] = multdiff_fvm(m,kappa,l0,lm,l,u0,Lbnd,Rbnd,tspan,'Perfect',dt,options);
+
+figure;
+for i = 1:m-1, 
+    plot([l(i),l(i)],[-0.1,1.1],'Color',[0.9,0.9,0.9])
+    hold on
+end
+p1 = plot(x,u,'b-','LineWidth',2.0);
+p2 = plot(xf,uf,'b.','MarkerSize',24);
+axis([0,1,-0.1,1.1])
+xlabel('$x$','Interpreter','LaTeX','FontSize',20)
+ylabel('$u(x,t)$','Interpreter','LaTeX','FontSize',20)
+set(gca,'FontSize',14,'Layer','top')
+h = legend([p1(1),p2(1)],'Semi-Analytic','Finite Volume','Location','NorthOutside','Orientation','Horizontal');
+set(h,'Interpreter','LaTex','FontSize',14)
+```
+
+<figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/ExampleA_fvm.png"></figure>
+
 ### Example B
 
 ``MultDiff`` can be used to solve multilayer diffusion problems with many layers.
