@@ -4,8 +4,8 @@ close all, clear all, clc
 addpath('..')
 
 % Parameters
-m     = 20;                            % Number of layers
-kappa = repmat([1.0,0.1],1,m/2);       % Diffusivities 
+m     = 100;                           % Number of layers
+kappa = 1.1 + cos(1:m);                % Diffusivities 
 l0    = 0.0;                           % Left end of slab
 lm    = 1.0;                           % Right end of slab
 dx    = (lm-l0)/m; l = dx:dx:lm-dx;    % Location of interfaces
