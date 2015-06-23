@@ -26,7 +26,6 @@ tspan = [0.02,0.05,0.1,0.2,0.5,1.0];  % Times at which to compute solution
 u0    = @(x) zeros(size(x));          % Initial condition
 Lbnd  = {'Dirichlet',1.0,0.0,1.0};    % Boundary condition (x = l0)
 Rbnd  = {'Dirichlet',1.0,0.0,0.5};    % Boundary condition (x = lm)
-
 [u,x] = multdiff(m,kappa,l0,lm,l,u0,Lbnd,Rbnd,tspan,'Perfect');
 ```
 
