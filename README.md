@@ -14,7 +14,10 @@ The code will be uploaded once the paper below has been published.
 
 If you use ``MultDiff``, we would appreciate that you mention it in your work by citing the following paper:
 
-_E. J. Carr and I. W. Turner (2015), A semi-analytic solution for multilayer diffusion in a composite slbab consisting of a large number of layers, Submitted for publication_.
+```
+E. J. Carr and I. W. Turner (2015), A semi-analytic solution for multilayer diffusion 
+in a composite slab consisting of a large number of layers, Submitted for publication.
+```
 
 <!--- Most approaches for this problem require the solution of a complex transcendental equation arising from the determinant of a `2m by 2m` matrix for the eigenvalues, which is difficult to solve for large `m`. Our approach is based on a semi-analytic method based on the Laplace transform and an orthogonal eigenfunction expansion involving eigenvalues that are obtained either explicitly or by solving simple transcendental equations. -->
 
@@ -121,7 +124,7 @@ H     = 30*ones(m-1,1);              % Contact transfer coefficients at interfac
 
 ### Example D
 
-`MultDiff` can can also be used to solve the single layer problem.
+`MultDiff` can also be used to solve the single layer problem.
 
 ```
 m     = 3;                          % Number of layers
