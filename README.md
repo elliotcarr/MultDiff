@@ -2,6 +2,10 @@
 
 ``MultDiff`` solves the transient diffusion equation in a one-dimensional composite slab of finite length consisting of `m` layers. The code is applicable to both perfect and imperfect contact at the interfaces between adjacent layers and either Dirichlet, Neumann or Robin boundary conditions at the ends of the slab. The code works well for a large number of layers (large `m`).
 
+The code features two solution approaches:
+ - ``multdiff`` uses a semi-analytic method based on the Laplace transform and an orthogonal eigenfunction expansion.
+ - ``multdiff_fvm`` uses a finite volume method and a backward Euler time discretisation.
+
 ## References
 
 If you use ``MultDiff``, we would appreciate that you mention it in your work by citing the following paper:
@@ -15,6 +19,8 @@ If you use ``MultDiff``, we would appreciate that you mention it in your work by
 ``MultDiff`` is best demonstrated with some examples.
 
 ### Example A
+
+``MultDiff`` can be used to solve multilayer diffusion problems with three or more layers.
 
 ```
 m     = 3;                            % Number of layers
@@ -46,6 +52,8 @@ set(gca,'FontSize',14,'Layer','top')
 <figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/ExampleA.png"></figure>
 
 ### Example B
+
+``MultDiff`` can be used to solve multilayer diffusion problems with many layers.
 
 ```
 m     = 20;                            % Number of layers
@@ -85,7 +93,7 @@ H     = 30*ones(m-1,1);              % Contact transfer coefficients at interfac
 
 ### Example D
 
-`MultDiff` can can also be used to solve the single layer problem:
+`MultDiff` can can also be used to solve the single layer problem.
 
 ```
 m     = 3;                          % Number of layers
