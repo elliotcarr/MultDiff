@@ -24,20 +24,21 @@ If you use ``MultDiff``, we would appreciate that you mention it in your work by
 
 ```
 m     = 3;                            % Number of layers
+kappa = [1,0.1,1];                    % Diffusivities 
 l0    = 0.0;                          % Left end of slab
 lm    = 1.0;                          % Right end of slab
 l     = [0.3,0.7];                    % Location of interfaces
-kappa = [1,0.1,1];                    % Diffusivities 
-tspan = [0.02,0.05,0.1,0.2,0.5,1.0];  % Times at which to compute solution
 u0    = @(x) zeros(size(x));          % Initial condition
 Lbnd  = {'Dirichlet',1.0,0.0,1.0};    % Boundary condition (x = l0)
 Rbnd  = {'Dirichlet',1.0,0.0,0.5};    % Boundary condition (x = lm)
+tspan = [0.02,0.05,0.1,0.2,0.5,1.0];  % Times at which to compute solution
 [u,x] = multdiff(m,kappa,l0,lm,l,u0,Lbnd,Rbnd,tspan,'Perfect');
 ```
 
 We can plot the solution to the above problem using the following code:
 
 ```
+% Plot
 for i = 1:m-1, 
     plot([l(i),l(i)],[-0.1,1.1],'Color',[0.9,0.9,0.9])
     hold on
@@ -56,15 +57,15 @@ set(gca,'FontSize',14,'Layer','top')
 ``MultDiff`` can be used to solve multilayer diffusion problems with many layers.
 
 ```
-m     = 20;                            % Number of layers
+m     = 100;                           % Number of layers
+kappa = 1.1 + cos(1:m);                % Diffusivities 
 l0    = 0.0;                           % Left end of slab
 lm    = 1.0;                           % Right end of slab
 dx    = (lm-l0)/m; l = dx:dx:lm-dx;    % Location of interfaces
-kappa = repmat([1.0,0.1],1,m/2);       % Diffusivities 
-tspan = [0.001,0.1,0.5,1.0,2.0,15.0];  % Times at which to compute solution
 u0    = @(x) ones(size(x));            % Initial condition
 Lbnd  = {'Neumann',0.0,1.0,0.0};       % Boundary condition (x = l0)
 Rbnd  = {'Dirichlet',1.0,0.0,0.1};     % Boundary condition (x = lm)
+tspan = [0.001,0.1,0.5,1.0,2.0,15.0];  % Times at which to compute solution
 [u,x] = multdiff(m,kappa,l0,lm,l,u0,Lbnd,Rbnd,tspan,'Perfect');
 ```
 
@@ -77,14 +78,14 @@ Rbnd  = {'Dirichlet',1.0,0.0,0.1};     % Boundary condition (x = lm)
 
 ```
 m     = 20;                          % Number of layers
+kappa = ones(m,1);                   % Diffusivities 
 l0    = 0.0;                         % Left end of slab
 lm    = 1.0;                         % Right end of slab
 dx    = (lm-l0)/m; l = dx:dx:lm-dx;  % Location of interfaces
-kappa = ones(m,1);                   % Diffusivities 
-tspan = [0.01,0.1,0.2,0.5,1.0];      % Times at which to compute solution
 u0    = @(x) zeros(size(x));         % Initial condition
 Lbnd  = {'Dirichlet',1.0,0.0,1.0};   % Boundary condition (x = l0)
 Rbnd  = {'Dirichlet',1.0,0.0,1.0};   % Boundary condition (x = lm)
+tspan = [0.01,0.1,0.2,0.5,1.0];      % Times at which to compute solution
 H     = 30*ones(m-1,1);              % Contact transfer coefficients at interfaces
 [u,x] = multdiff(m,kappa,l0,lm,l,u0,Lbnd,Rbnd,tspan,'Imperfect',H);
 ```
@@ -97,14 +98,14 @@ H     = 30*ones(m-1,1);              % Contact transfer coefficients at interfac
 
 ```
 m     = 3;                          % Number of layers
+kappa = [1,1,1];                    % Diffusivities 
 l0    = 0.0;                        % Left end of slab
 lm    = 1.0;                        % Right end of slab
 l     = [0.3,0.7];                  % Location of interfaces
-kappa = [1,1,1];                    % Diffusivities 
-tspan = [0.02,0.05,0.1,0.2,1.0];    % Times at which to compute solution
 u0    = @(x) zeros(size(x));        % Initial condition
 Lbnd  = {'Dirichlet',1.0,0.0,1.0};  % Boundary condition (x = l0)
-Rbnd  = {'Dirichlet',1.0,0.0,0.5};  % Boundary condition (x = lm)
+Rbnd  = {'Robin',1.0,0.5,0.5};      % Boundary condition (x = lm)
+tspan = [0.02,0.05,0.1,0.2,1.0];    % Times at which to compute solution
 [u,x] = multdiff(m,kappa,l0,lm,l,u0,Lbnd,Rbnd,tspan,'Perfect');
 ```
 
