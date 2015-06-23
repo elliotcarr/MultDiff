@@ -16,6 +16,7 @@ tspan = [0.02,0.05,0.1,0.2,0.5,1.0];  % Times at which to compute solution
 [u,x] = multdiff(m,kappa,l0,lm,l,u0,Lbnd,Rbnd,tspan,'Perfect');
 
 % Plot
+figure;
 for i = 1:m-1, 
     plot([l(i),l(i)],[-0.1,1.1],'Color',[0.9,0.9,0.9])
     hold on

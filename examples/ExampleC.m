@@ -17,6 +17,7 @@ H     = 30*ones(m-1,1);              % Contact transfer coefficients at interfac
 [u,x] = multdiff(m,kappa,l0,lm,l,u0,Lbnd,Rbnd,tspan,'Imperfect',H);
 
 % Plot
+figure;
 for i = 1:m-1, 
     plot([l(i),l(i)],[-0.1,1.1],'Color',[0.9,0.9,0.9])
     hold on
