@@ -12,7 +12,7 @@ The code features two solution approaches:
 
 If you use ``MultDiff``, we would appreciate that you mention it in your work by citing the following paper:
 
-E. J. Carr and I. W. Turner (2015), A semi-analytic solution for multilayer diffusion in a composite slbab consisting of a large number of layers, Submitted to Applied Mathematical Modelling.
+_E. J. Carr and I. W. Turner (2015), A semi-analytic solution for multilayer diffusion in a composite slbab consisting of a large number of layers, Submitted to Applied Mathematical Modelling._
 
 The code will be uploaded once the above paper has been published.
 
