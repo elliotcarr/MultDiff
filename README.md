@@ -147,4 +147,4 @@ where `multdiffroot` is the path to the unzipped directory.
 
 ## License
 
-See `LICENSE.txt` for licensing information.
+See `LICENSE.md` for licensing information.
