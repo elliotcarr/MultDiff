@@ -14,7 +14,7 @@ If you use ``MultDiff``, we would appreciate that you mention it in your work by
 
 ``MultDiff`` is best demonstrated with some examples.
 
-### Case A
+### Example A
 
 ```
 m     = 3;                            % Number of layers
@@ -43,9 +43,9 @@ ylabel('$u(x,t)$','Interpreter','LaTeX','FontSize',20)
 set(gca,'FontSize',14,'Layer','top')
 ```
 
-<figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseA.png"></figure>
+<figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/ExampleA.png"></figure>
 
-### Case B
+### Example B
 
 ```
 m     = 20;                            % Number of layers
@@ -60,10 +60,10 @@ Rbnd  = {'Dirichlet',1.0,0.0,0.1};     % Boundary condition (x = lm)
 [u,x] = multdiff(m,kappa,l0,lm,l,u0,Lbnd,Rbnd,tspan,'Perfect');
 ```
 
-<figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseB.png"></figure>
+<figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/ExampleB.png"></figure>
 
 
-### Case C
+### Example C
 
 `MultDiff` also allows for imperfect contact at the interfaces between adjacent layers.
 
@@ -81,9 +81,9 @@ H     = 30*ones(m-1,1);              % Contact transfer coefficients at interfac
 [u,x] = multdiff(m,kappa,l0,lm,l,u0,Lbnd,Rbnd,tspan,'Imperfect',H);
 ```
 
-<figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseC.png"></figure>
+<figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/ExampleC.png"></figure>
 
-### Case D
+### Example D
 
 `MultDiff` can can also be used to solve the single layer problem:
 
@@ -100,7 +100,7 @@ Rbnd  = {'Dirichlet',1.0,0.0,0.5};  % Boundary condition (x = lm)
 [u,x] = multdiff(m,kappa,l0,lm,l,u0,Lbnd,Rbnd,tspan,'Perfect');
 ```
 
-<figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/CaseD.png"></figure>
+<figure><img src="https://github.com/elliotcarr/MultDiff/raw/master/figures/ExampleD.png"></figure>
 
 ## Installation
 
