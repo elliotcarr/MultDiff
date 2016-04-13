@@ -321,6 +321,13 @@ if aR == 0 && bR == 0
     error('Boundary condition is incorrect at left boundary (aR = bR = 0).')
 end
 
+if strcmp(Ltype,'Neumann') && strcmp(Rtype,'Neumann') && ...
+        (kappa(1)*bR*cL + kappa(m)*bL*cR) ~= 0
+    error(['If Neumann boundary conditions are applied at both ends then ', ...
+        'kappa(1)*bR*cL + kappa(m)*bL*cR must be equal to zero.'])
+end
+    
+
 % -------------------------------------------------------------------------
 % Compute function w(x) that satisfies non-homogeneous BCs
 %
@@ -420,6 +427,7 @@ if strcmp(Ltype,'Neumann') && strcmp(Rtype,'Neumann')
     A(2*m+1,2*i)   = (lm^2-l(m-1)^2)/2;
     b(2*m+1)       = b(2*m+1) + integral(u0,l(m-1),lm,'AbsTol',AbsTol,'RelTol',RelTol);
 end
+
 
 w = A\b;
 % pause;
