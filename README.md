@@ -12,8 +12,8 @@ The code features two solution approaches:
 
 If you use ``MultDiff``, we would appreciate that you mention it in your work by citing the following paper:
 
-E. J. Carr and I. W. Turner (2016), A semi-analytical solution for multilayer diffusion in a 
-composite medium consisting of a large number of layers, Applied Mathematical Modelling, 
+E. J. Carr and I. W. Turner, A semi-analytical solution for multilayer diffusion in a 
+composite medium consisting of a large number of layers, Applied Mathematical Modelling (2016), 
 http://dx.doi.org/10.1016/j.apm.2016.02.041
 
 
