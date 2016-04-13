@@ -12,11 +12,10 @@ The code features two solution approaches:
 
 If you use ``MultDiff``, we would appreciate that you mention it in your work by citing the following paper:
 
-```
 E. J. Carr and I. W. Turner (2016), A semi-analytical solution for multilayer diffusion in a 
 composite medium consisting of a large number of layers, Applied Mathematical Modelling, 
 http://dx.doi.org/10.1016/j.apm.2016.02.041
-```
+
 
 <!--- Most approaches for this problem require the solution of a complex transcendental equation arising from the determinant of a `2m by 2m` matrix for the eigenvalues, which is difficult to solve for large `m`. Our approach is based on a semi-analytic method based on the Laplace transform and an orthogonal eigenfunction expansion involving eigenvalues that are obtained either explicitly or by solving simple transcendental equations. -->
 
