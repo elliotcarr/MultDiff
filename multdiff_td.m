@@ -9,13 +9,12 @@ function varargout = multdiff_td(m,D,gamma,theta,l0,lm,l,u0,Lbnd,Rbnd,tspan,H,va
 %   Neumann or Robin at the ends of the slab.
 %  
 %   MULTDIFF_TD is an implementation of the semi-analytical method
-%   proposed of Carr and March.
+%   proposed by Carr and March.
 %
 %   Full details can be found in the paper: 
 %   EJ Carr and NG March, Semi-analytical solution of multilayer diffusion problems 
 %   with time-varying boundary conditions and general interface conditions,
 %   Appl. Math. Comput. 333 (2018), 286-303.
-%
 
 % Default values
 AbsTol = 1e-10;
@@ -375,30 +374,6 @@ for n = 1:N
     end
 end
 
-% usoln = reshape(u,(NX+1)*m,1);
-% x = reshape(xgrid,(NX+1)*m,1);
-
-% % % figure;
-% % % % for i = 1:m
-% % % %     uint(:,i) = u0(xgrid(:,i))-wfunc(i,Ltype,Rtype,xgrid(:,i),m,w);
-% % % % end
-% % % % for i = 1:m
-% % % %     u(:,i) = u(:,i) + wfunc(i,Ltype,Rtype,xgrid(:,i),m,w);
-% % % % end
-% % % usoln = reshape(u,(NX+1)*m,1);
-% % % plot(x,usoln,'r')
-% % % % hold on
-% % % %plot(x,reshape(uint,(NX+1)*m,1),'b')
-% % % drawnow
-% % % hold off
-% % % % pause;
-
-% lambda
-% pause;
-
-% norm(u(end,1)-u(1,2),inf)
-% pause;
-
 % Get weights and poles for use in inverse transform
 [zk,ck] = cf(NZ);
 
@@ -628,28 +603,8 @@ for j = 1:tlength
             -g(m+1)*beta2(n,m)*eigs_norm(n,m)*eigfunc(lambda(n,m),m,Ltype,Rtype,xgrid(:,m),m,l0,lm,l);
                     
     end
-
-%     usoln(:,j) = reshape(u,(NX+1)*m,1);
-    
-%     ss = zeros(size(xgrid(:,1))); %a= 0;
-%     for n = 1:N
-%         ss = ss - eigs_norm(n,1)*eigfunc(lambda(n,1),1,Ltype,Rtype,l(1),m,l0,lm,l)...
-%             /(D(1)*lambda(n,1)^2)*eigs_norm(n,1)*eigfunc(lambda(n,1),1,Ltype,Rtype,xgrid(:,1),m,l0,lm,l)*g(2);
-% %         ss = ss - eigs_norm(n,1)*1.0/(aL*lambda(n,1))*exp(-tspan(j)*D(1)*lambda(n,1)^2)...
-% %             *eigs_norm(n,1)*eigfunc(lambda(n,1),1,Ltype,Rtype,xgrid(:,1),m,l0,lm,l);
-% %         ss = ss + eigs_norm(n,1)*eigfunc(lambda(n,1),1,Ltype,Rtype,l(1),m,l0,lm,l)...
-% %             *D(1)*0.5417*exp(-tspan(j)*D(1)*lambda(n,1)^2)...
-% %             *eigs_norm(n,1)*eigfunc(lambda(n,1),1,Ltype,Rtype,xgrid(:,1),m,l0,lm,l);
-% %         a = a + eigs_norm(n,1)*1.0/(aL*lambda(n,1));
-%         %eigfunc(lambda(n,1),1,Ltype,Rtype,xgrid(:,1),m,l0,lm,l)
-%     end
-%     ss = cL(tspan(j))/aL + g(2)/D(1)*(xgrid(:,1)-l0+bL/aL) + ss
-%     plot(xgrid(:,1),ss,'r','LineWidth',6.0)
-%     hold on
     
 end
-
-% drawnow
 
 % u = usoln;
 x = xgrid;
