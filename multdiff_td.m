@@ -38,7 +38,7 @@ end
 
 % Number of layers
 if round(m) ~= m || m < 2
-    error('m must be an integer greater than or equal to 3.')
+    error('m must be an integer greater than or equal to 3. For m = 2 with diffusivity D1 on l0 < x < L and D2 on L < x < lm, use m = 4. For example, set D = [D1,D1,D2,D2] and l = [L/2,L,3*L/4].')
 end
 
 % Diffusivities
